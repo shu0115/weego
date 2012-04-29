@@ -1,6 +1,80 @@
-
-<h1>New event</h1>
-
-<%= render 'form' %>
-
-<%= link_to t( "menu.list", default: "List" ), action: "index" %>
+<!DOCTYPE HTML>
+<html lang="ja">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
+  <meta name="description" content="やiPhoneで簡単に、買ったその場で家計簿をつけられるサービス「Receibo（レシーボ）」" />
+  <meta name="keywords" content="iPhone, スマートフォン, 家計簿, レシーボ, Receibo, ハッカソン, Ruby, Ruby on Rails" />
+  <link rel="stylesheet" href="/assets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<head>
+	<meta charset="UTF-8">
+	<title>Weego</title>
+</head>
+<body class="form">
+  <header>
+  <div class="button-back"><a href="#">戻る</a></div>
+  <div class="logo"><img src="/assets/logo_header.png" alt="Weego" width="320px" height="30px"></div>
+  </header>
+  
+  <article>
+    <%= form_for :event, url: { action: @submit, id: @event.try(:id) } do |f| %>
+    <!--<form>-->
+      <label>
+        <p>いつ？</p>
+        <p>
+    <%#= f.datetime_select :start_at, { use_month_numbers: true, minute_step: 10 } %>
+    
+        <select name="event[start_at(1i)]" data-theme="c" id="year" aria-disabled="false">
+        <% Time.now.year.upto( (Time.now.year + 1) ){ |year| %>
+          <option value="<%= year %>"><%= year %></option>
+        <% } %>
+        </select>年
+        
+        <select name="event[start_at(2i)]" data-theme="c" id="month" aria-disabled="false">
+        <% 1.upto( 12 ){ |month| %>
+          <option value="<%= month %>"><%= month %></option>
+        <% } %>
+        </select>月
+        
+        <select name="event[start_at(3i)]" data-theme="c" id="date" aria-disabled="false">
+        <% 1.upto( 31 ){ |day| %>
+          <option value="<%= day %>"><%= day %></option>
+        <% } %>
+        </select>日
+        </p>
+        
+        <p>
+        <select name="event[start_at(4i)]" data-theme="c" id="hour" aria-disabled="false">
+        <% 1.upto( 24 ){ |hour| %>
+          <option value="<%= hour %>"><%= sprintf( "%02d", hour ) %></option>
+        <% } %>
+        </select>:
+        
+        <select name="event[start_at(5i)]" data-theme="c" id="minute" aria-disabled="false">
+        <% 0.upto( 59 ){ |minute| %>
+          <option value="<%= minute %>"><%= sprintf( "%02d", minute ) %></option>
+        <% } %>
+        </select>
+        </p>
+        
+        <!--<p><input type="time" name="time"></p>-->
+      </label>
+      
+      <label>
+        <p>どこに？</p>
+        <p><!--<input type="text" name="text" id="where">--><input id="where" name="event[place]" size="30" type="text" /><%#= f.text_field :place, { id: "where" } %></p>
+      </label>
+      
+      <label>
+        <p>コメント</p>
+        <p><!--<input type="text" name="text" id="comment">--><input type="text" cols="40" rows="20" id="comment" name="event[comment]"><%#= f.text_area :comment, { id: "comment" } %></p>
+      </label>
+      
+      <div class="button-area login">
+        <!--<input type="submit" name="commit" value="誰と？" class="button-submit">-->
+        <%= f.submit "誰と？", disable_with: "誰と？", class: "button-submit" %>
+      </div>
+    <!--</form>-->
+    <% end %>
+  </article>
+  <footer></footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<br />
+<br />
+
+<p>
+  <b>Start at:</b>
+  <%= @event.start_at %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @event.place %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @event.comment %>
+</p>
+
+<%= form_tag( action: "complete", event_id: @event.id ) do %>
+  <% @friend_ids.each.with_index{ |friend, index| %>
+    <%= check_box_tag "add[ids][#{friend}]", "add" %>
+    <%= label_tag "add[ids][#{friend}]", "#{friend}" %>
+  <br />
+  <% } %>
+
+  <br />
+
+	<%= submit_tag "誘う", disable_with: "誘う" %>
+<% end %>

@@ -4,13 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   # httpsリダイレクト
-  #  before_filter :ssl_redirect if Rails.env.production?
+  before_filter :ssl_redirect if Rails.env.production?
   
   # 未ログインリダイレクト
-  # before_filter :authorize
+  before_filter :authorize
   
   # セッション有効期限延長
-  # before_filter :reset_session_expires
+  before_filter :reset_session_expires
 
   private
   
@@ -38,6 +38,12 @@ class ApplicationController < ActionController::Base
         redirect_to :root and return
       end
     end
+    
+    # ログイン状態でトップ画面へ来たら
+    if params[:controller] == "top" and params[:action] == "index" and !(session[:user_id].blank?)
+      redirect_to( controller: "events", action: "new" )
+    end
+    
   end
   
   #-----------------------#

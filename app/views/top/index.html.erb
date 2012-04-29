@@ -1,2 +1,23 @@
-
-<h1>Welcome to <%= APP_NAME %>.</h1>
+<!DOCTYPE HTML>
+<html lang="ja">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
+  <meta name="description" content="やiPhoneで簡単に、買ったその場で家計簿をつけられるサービス「Receibo（レシーボ）」" />
+  <meta name="keywords" content="iPhone, スマートフォン, 家計簿, レシーボ, Receibo, ハッカソン, Ruby, Ruby on Rails" />
+  <link rel="stylesheet" href="/assets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<head>
+	<meta charset="UTF-8">
+	<title>Weego</title>
+</head>
+<body class="top">
+  <header>
+  </header>
+  <article>
+  <h1 id="logo"><img src="/assets/logo.png" width="320" height="75" alt="Weego 誰といく？"></h1>
+  <p>誰と行く？</p>
+  <div class="button-area login">
+    <%= link_to "Twitter Login", "/auth/#{DEFAULT_PROVIDER}" %>
+    <!--<a href="#" >Twitter Login</a>-->
+  </article>
+  <footer></footer>
+</body>
+</html>

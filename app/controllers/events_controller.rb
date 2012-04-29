@@ -63,8 +63,14 @@ class EventsController < ApplicationController
   # complete #
   #----------#
   def complete
+    add_list = params[:add].presence || Hash.new{ |hash, key| hash[key] = Hash.new }
+    
     text = "https://weego.heroku.com/events/show/#{params[:event_id]}"
-    params[:add][:ids].each_pair{ |key, value| text += " @#{key}" }
+    
+    add_list[:ids].each_pair{ |key, value|
+      text += CGI.escape( " @#{value}" )
+    }
+    
     text += " 行く？"
     
     redirect_to "https://twitter.com/intent/tweet?text=#{text}"

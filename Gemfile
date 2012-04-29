@@ -39,7 +39,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # For Heroku
-# gem 'thin'
+gem 'thin'
 
 group :production do
   gem 'pg'
@@ -51,4 +51,3 @@ gem 'omniauth-scaffold'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'custom-template'
-
