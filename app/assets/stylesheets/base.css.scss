@@ -1,3 +1,30 @@
+body{
+  background: #fff000;
+}
+header{
+  position: relative;
+  background: #000;
+  height: 42px;
+  text-align: center;
+  
+  .logo{
+    padding: 5px 0px 0px;
+  }
+ 
+  .button-back{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #d3d3d3;
+    padding: 8px;
+  }
+}
+
+article{
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
 
 /* テーブル */
 table, tr, th, td {

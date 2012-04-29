@@ -1,0 +1,54 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+
+form{
+  text-align: left;
+  
+  input{
+    @include border-radius(3px);
+    @include box-shadow(rgba(black, 0.2) 0 2px 3px 1px inset);
+    border:1px solid #627892;
+  }
+
+  label{
+    display: block;
+    padding: 5px 0px;
+    border-bottom: 1px #000 solid;
+    
+    p{
+      padding: 3px 0px 5px;
+      font-weight: bold;
+    }
+
+    select{
+      width: 50px;
+      height: 1.3em;
+      &#year {width: 100px;}
+    }
+    
+    #where{
+      width: 100%;
+      height: 2em;
+    }
+   
+    #comment{
+      width: 100%;
+      height: 2em;
+    }
+  }
+  
+  .button-submit{
+    cursor: pointer;
+    padding: 10px;
+    @include border-radius(4px);
+    color: #FFF;
+    font-size: 20px;
+    background: #000;
+    float: right;
+    margin: 10px 0px 10px;
+  }
+
+}  

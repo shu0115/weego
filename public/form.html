@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
+  <meta name="description" content="やiPhoneで簡単に、買ったその場で家計簿をつけられるサービス「Receibo（レシーボ）」" />
+  <meta name="keywords" content="iPhone, スマートフォン, 家計簿, レシーボ, Receibo, ハッカソン, Ruby, Ruby on Rails" />
+  <link rel="stylesheet" href="/assets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<head>
+	<meta charset="UTF-8">
+	<title>Weego</title>
+</head>
+<body class="form">
+  <header>
+  <div class="button-back"><a href="#">戻る</a></div>
+  <div class="logo"><img src="/assets/logo_header.png" alt="Weego" width="320px" height="30px"></div>
+  </header>
+  <article>
+    <form>
+      <label>
+        <p>いつ？</p>
+        <p>
+        <select name="year" data-theme="c" id="year" aria-disabled="false">
+          <option value="2012">2012</option><option value="2013">2013</option>
+        </select>年
+        <select name="month" data-theme="c" id="month" aria-disabled="false">
+          <option value="2012">2012</option><option value="2013">2013</option>
+        </select>月
+        <select name="date" data-theme="c" id="date" aria-disabled="false">
+          <option value="2012">2012</option><option value="2013">2013</option>
+        </select>日
+        </p>
+        <p><input type="time" name="time"></p>
+      </label>
+      <label>
+        <p>どこに？</p>
+        <p><input type="text" name="text" id="where"></p>
+      </label>
+      <label>
+        <p>コメント</p>
+        <p><input type="text" name="text" id="comment"></p>
+      </label>
+      <div class="button-area login">
+        <input type="submit" name="commit" value="誰と？" class="button-submit">
+      </div>
+    </form>
+  </article>
+  <footer></footer>
+</body>
+</html>
