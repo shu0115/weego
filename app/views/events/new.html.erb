@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="ja">
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
   <meta name="description" content="やiPhoneで簡単に、買ったその場で家計簿をつけられるサービス「Receibo（レシーボ）」" />
   <meta name="keywords" content="iPhone, スマートフォン, 家計簿, レシーボ, Receibo, ハッカソン, Ruby, Ruby on Rails" />
   <link rel="stylesheet" href="/assets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<head>
 	<meta charset="UTF-8">
 	<title>Weego</title>
 </head>
@@ -17,7 +17,7 @@
   <article>
     <%= form_for :event, url: { action: @submit, id: @event.try(:id) } do |f| %>
     <!--<form>-->
-      <label>
+      <div class="date">
         <p>いつ？</p>
         <p>
     <%#= f.datetime_select :start_at, { use_month_numbers: true, minute_step: 10 } %>
@@ -56,17 +56,17 @@
         </p>
         
         <!--<p><input type="time" name="time"></p>-->
-      </label>
+      </div>
       
-      <label>
+      <div class="place">
         <p>どこに？</p>
         <p><!--<input type="text" name="text" id="where">--><input id="where" name="event[place]" size="30" type="text" /><%#= f.text_field :place, { id: "where" } %></p>
-      </label>
+      </div>
       
-      <label>
+      <div class="comment">
         <p>コメント</p>
         <p><!--<input type="text" name="text" id="comment">--><input type="text" cols="40" rows="20" id="comment" name="event[comment]"><%#= f.text_area :comment, { id: "comment" } %></p>
-      </label>
+      </div>
       
       <div class="button-area login">
         <!--<input type="submit" name="commit" value="誰と？" class="button-submit">-->
