@@ -4,13 +4,29 @@
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
 
-form{
+.form{
   text-align: left;
+  
+  article{
+    width: 300px;
+    padding: 0 10px;
+  }
+
   
   input{
 /*    @include border-radius(3px);*/
 /*    @include box-shadow(rgba(black, 0.2) 0 2px 3px 1px inset);*/
     border:1px solid #627892;
+  }
+  input[type="text"],textarea,select {
+
+    color: #5a5c63;
+    font-size: 100% ;
+    width: 100% ;
+    padding: 3px ;
+    border: 1px solid #999999 ;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2) inset ;
+    -webkit-box-sizing: border-box;
   }
 
   div{
@@ -24,18 +40,18 @@ form{
     }
 
     select{
-      width: 50px;
+      width: 60px;
       height: 1.3em;
       &#year {width: 100px;}
     }
     
     #where{
-      width: 100%;
+      width: 85%;
       height: 2em;
     }
    
     #comment{
-      width: 100%;
+      width: 85%;
       height: 2em;
     }
   }
