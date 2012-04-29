@@ -8,8 +8,8 @@ form{
   text-align: left;
   
   input{
-    @include border-radius(3px);
-    @include box-shadow(rgba(black, 0.2) 0 2px 3px 1px inset);
+/*    @include border-radius(3px);*/
+/*    @include box-shadow(rgba(black, 0.2) 0 2px 3px 1px inset);*/
     border:1px solid #627892;
   }
 
