@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="ja">
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
   <meta name="description" content="やiPhoneで簡単に、買ったその場で家計簿をつけられるサービス「Receibo（レシーボ）」" />
   <meta name="keywords" content="iPhone, スマートフォン, 家計簿, レシーボ, Receibo, ハッカソン, Ruby, Ruby on Rails" />
   <link rel="stylesheet" href="/assets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<head>
 	<meta charset="UTF-8">
 	<title>Weego</title>
 </head>
@@ -15,7 +15,7 @@
   </header>
   <article>
     <form>
-      <label>
+      <div class="date">
         <p>いつ？</p>
         <p>
         <select name="year" data-theme="c" id="year" aria-disabled="false">
@@ -29,15 +29,15 @@
         </select>日
         </p>
         <p><input type="time" name="time"></p>
-      </label>
-      <label>
+      </div>
+      <div class="place">
         <p>どこに？</p>
         <p><input type="text" name="text" id="where"></p>
-      </label>
-      <label>
+      </div>
+      <div class="comment">
         <p>コメント</p>
         <p><input type="text" name="text" id="comment"></p>
-      </label>
+      </div>
       <div class="button-area login">
         <input type="submit" name="commit" value="誰と？" class="button-submit">
       </div>
