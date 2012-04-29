@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<% if false %>
 <%# ----- 追加 ----- %>
 <% if current_user %>
   <%# ログイン済み %>
@@ -25,6 +26,7 @@
 <%= simple_format( flash[:notice], style: "color: green;" ) unless flash[:notice].blank? %>
 <%= simple_format( flash[:alert], style: "color: red;" ) unless flash[:alert].blank? %>
 <%# ----- ／追加 ----- %>
+<% end %>
 
 <%= yield %>
 
