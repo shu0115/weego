@@ -17,9 +17,9 @@ class EntriesController < ApplicationController
     
     @entry = Entry.where( user_id: session[:user_id], event_id: @event.id ).first.presence || Entry.new
     
-    if params[:commit] == "行く"
+    if params[:going] == "いく！"
       @entry.update_attributes( user_id: session[:user_id], event_id: @event.id, entry_at: Time.now, status: "出席" )
-    elsif params[:commit] == "行かない"
+    elsif params[:notgoing] == "いかない"
       @entry.update_attributes( user_id: session[:user_id], event_id: @event.id, entry_at: Time.now, status: "欠席" )
     end
   end
