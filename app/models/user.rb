@@ -1,6 +1,7 @@
 # coding: utf-8
 class User < ActiveRecord::Base
-  # attr_accessible :title, :body
+  has_many :entries
+  has_many :events
 
   private
 
@@ -17,7 +18,12 @@ class User < ActiveRecord::Base
       user[:screen_name] = auth["info"]["nickname"]
       user[:image] = auth["info"]["image"]
     end
-
+    
+    unless auth["credentials"].blank?
+      user.token = auth['credentials']['token']
+      user.secret = auth['credentials']['secret']
+    end
+    
     user.save
 
     return user

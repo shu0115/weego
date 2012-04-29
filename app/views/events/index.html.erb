@@ -1,0 +1,37 @@
+
+<h1>Listing events</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Start at</th>
+    <th>Place</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each{ |event| %>
+  <tr>
+    <td><%= event.user_id %></td>
+    <td><%= event.start_at %></td>
+    <td><%= event.place %></td>
+    <td><%= event.comment %></td>
+    <td><%= link_to "Invite", action: "invite", id: event.id %></td>
+    <td><%= link_to t( "menu.show", default: "Show" ), action: "show", id: event.id %></td>
+    <td><%= link_to t( "menu.edit", default: "Edit" ), action: "edit", id: event.id %></td>
+    <td><%= link_to t( "menu.destroy", default: "Delete" ), { action: "destroy", id: event.id }, onclick: "return confirm('本当に削除してよろしいですか？');" %></td>
+  </tr>
+<% } %>
+</table>
+
+<br />
+
+<%= link_to t( "menu.new", default: "New" ), action: "new" %>
+
+<br />
+<br />
+
+<%= link_to t( "menu.top", default: "Top" ), :root %>

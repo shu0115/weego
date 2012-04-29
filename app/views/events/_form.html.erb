@@ -1,0 +1,33 @@
+
+<%= form_for :event, url: { action: @submit, id: @event.try(:id) } do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_at, "いつ？" %><br />
+    <%= f.datetime_select :start_at, { use_month_numbers: true, minute_step: 10 } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place, "どこで？" %><br />
+    <%= f.text_field :place %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment, "ひとこと" %><br />
+    <%= f.text_area :comment %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t( "menu.#{@submit}", default: @submit ), disable_with: t( "menu.#{@submit}", default: @submit ) %>
+  </div>
+<% end %>

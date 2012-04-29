@@ -1,0 +1,45 @@
+
+<p>
+  <b>Start at:</b>
+  <%= @event.start_at %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @event.place %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @event.comment %>
+</p>
+
+<%= form_tag( controller: "entries", action: "attend", event_id: @event.id ) do %>
+  <%= hidden_field_tag :event_id, @event.id %>
+
+	<%= submit_tag "行く" %>
+	<%= submit_tag "行かない" %>
+<% end %>
+
+<br />
+
+<table>
+  <tr>
+    <th>ユーザ</th>
+    <th>回答</th>
+    <th>回答日時</th>
+  </tr>
+
+<% @entries.each{ |entry| %>
+  <tr>
+    <td><%= entry.user.try(:screen_name) %></td>
+    <td><%= entry.status %></td>
+    <td><%= entry.entry_at.strftime("%Y/%m/%d %H:%M:%S") unless entry.entry_at.blank? %></td>
+  </tr>
+<% } %>
+</table>
+
+<br />
+
+<%= link_to t( "menu.edit", default: "Edit" ), action: "edit", id: @event.id %>
+ | <%= link_to t( "menu.list", default: "List" ), action: "index" %>

@@ -12,6 +12,9 @@
 <% if current_user %>
   <%# ログイン済み %>
   <%= current_user.name %> : 
+   <%= link_to "Event" , controller: "events", action: "new" %>
+   | <%= link_to "List" , controller: "events", action: "index" %>
+  <% if false %> | <%= link_to "Entry" , controller: "entry", action: "new" %><% end %>
    || <%= link_to "Logout" , logout_path %>
 <% else %>
   <%# 未ログイン %>
