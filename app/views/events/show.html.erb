@@ -17,7 +17,7 @@
   <article>
     <dl class="date">
       <dt>いつ？</dt>
-      <dd><!--2012年04月29日 18:00〜--><%= @event.start_at.strftime("%Y/%m/%d %H:%M:%S") unless @event.start_at.blank? %></dd>
+      <dd><!--2012年04月29日 18:00〜--><%= @event.start_at.strftime("%Y/%m/%d %H:%M") unless @event.start_at.blank? %></dd>
     </dl>
     
     <dl class="place">

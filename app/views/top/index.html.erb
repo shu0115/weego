@@ -15,7 +15,10 @@
   <h1 id="logo"><img src="/assets/logo.png" width="320" height="75" alt="Weego 誰といく？"></h1>
   <p>誰と行く？</p>
   <div class="button-area login">
-    <%= link_to "Twitter Login", "/auth/#{DEFAULT_PROVIDER}" %>
+    <%#= link_to "Twitter Login", "/auth/#{DEFAULT_PROVIDER}" %>
+    <%= link_to( image_tag( "/assets/twitter_login.png", size: "191x31", alt: "Twitter Login" ), "/auth/#{DEFAULT_PROVIDER}" ) %>
+
+    <!--<a href="#" ><img src="/assets/twitter_login.png" alt="Twitter Login" width="191" height="31"></a>-->
     <!--<a href="#" >Twitter Login</a>-->
   </article>
   <footer></footer>
