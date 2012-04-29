@@ -1,18 +1,18 @@
-# APP_NAME
+# Weego
 
-APP_DESCRIPTION
+Simple Attend App.
 
 ## Local Setting
 
 ### GitHub上でFork
 
-    https://github.com/USER_NAME/APP_NAME/
+    https://github.com/shu0115/weego
 
 ### リポジトリをローカルへ作成
 
     $ cd ~/WORK_DIRECTORY
-    $ git clone git@github.com:MY_USER_NAME/APP_NAME.git
-    $ cd APP_NAME
+    $ git clone git@github.com:shu0115/weego.git
+    $ cd weego
 
 ### ブランチ作成
 
@@ -41,14 +41,6 @@ Edit: config/initializers/local_setting.rb
 
 ※Twitterアプリ登録完了後に表示された「Consumer key」を「YOUR_CONSUMER_KEY」に、「Consumer secret」を「YOUR\_CONSUMER_SECRET」にそれぞれ入力
 
-### アプリ名設定
-
-Edit: config/initializers/constants.rb
-
-    APP_NAME = "YOUR_APP_NAME"
-  
-※「YOUR\_APP_NAME」を自分の作成したアプリ名に修正
-
 ### Rails起動
 
 Gemインストール
@@ -69,4 +61,4 @@ Gemインストール
 
 ## Copyright
 
-Copyright (c) 2012 MY NAME. <a href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/" target="_blank">CC BY-NC-SA 2.1</a>
+Copyright (c) 2012 Developed by @shu_0115, Designed by @s_katsushima in <a href="https://github.com/prog4designer/hackathon2nd/wiki" target="_blank">#p4dhack</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/" target="_blank">CC BY-NC-SA 2.1</a>
