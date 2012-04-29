@@ -1,45 +1,47 @@
-
-<p>
-  <b>Start at:</b>
-  <%= @event.start_at %>
-</p>
-
-<p>
-  <b>Place:</b>
-  <%= @event.place %>
-</p>
-
-<p>
-  <b>Comment:</b>
-  <%= @event.comment %>
-</p>
-
-<%= form_tag( controller: "entries", action: "attend", event_id: @event.id ) do %>
-  <%= hidden_field_tag :event_id, @event.id %>
-
-	<%= submit_tag "行く" %>
-	<%= submit_tag "行かない" %>
-<% end %>
-
-<br />
-
-<table>
-  <tr>
-    <th>ユーザ</th>
-    <th>回答</th>
-    <th>回答日時</th>
-  </tr>
-
-<% @entries.each{ |entry| %>
-  <tr>
-    <td><%= entry.user.try(:screen_name) %></td>
-    <td><%= entry.status %></td>
-    <td><%= entry.entry_at.strftime("%Y/%m/%d %H:%M:%S") unless entry.entry_at.blank? %></td>
-  </tr>
-<% } %>
-</table>
-
-<br />
-
-<%= link_to t( "menu.edit", default: "Edit" ), action: "edit", id: @event.id %>
- | <%= link_to t( "menu.list", default: "List" ), action: "index" %>
+<!DOCTYPE HTML>
+<html lang="ja">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" >
+  <meta name="description" content="やiPhoneで簡単に、買ったその場で家計簿をつけられるサービス「Receibo（レシーボ）」" />
+  <meta name="keywords" content="iPhone, スマートフォン, 家計簿, レシーボ, Receibo, ハッカソン, Ruby, Ruby on Rails" />
+  <link rel="stylesheet" href="/assets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<head>
+	<meta charset="UTF-8">
+	<title>Weego</title>
+</head>
+<body class="event">
+  <header>
+  <div class="button-back"><a href="#">戻る</a></div>
+  <div class="logo"><img src="/assets/logo_header.png" alt="Weego" width="320px" height="30px"></div>
+  </header>
+  
+  <article>
+    <dl class="date">
+      <dt>いつ？</dt>
+      <dd><!--2012年04月29日 18:00〜--><%= @event.start_at.strftime("%Y/%m/%d %H:%M:%S") unless @event.start_at.blank? %></dd>
+    </dl>
+    
+    <dl class="place">
+      <dt>どこ？</dt>
+      <dd><!--居酒屋みどり --><%= @event.place %></dd>
+    </dl>
+    
+    <dl class="comment">
+      <dt>コメント</dt>
+      <dd><!--ビールが80円でのめるよ--><%= @event.comment %></dd>
+    </dl>
+    
+    <%= form_tag( controller: "entries", action: "attend", event_id: @event.id ) do %>
+      <%= hidden_field_tag :event_id, @event.id %>
+  <!--<form>-->
+      <div class="button-area button-submit">
+        <input type="submit" name="going" value="いく！" class="button-submit going">
+      </div>
+      <div class="button-area button-submit">
+        <input type="submit" name="notgoing" value="いかない" class="button-submit notgoing">
+      </div>
+    <!--</form>-->
+    <% end %>
+  </article>
+  <footer></footer>
+</body>
+</html>
